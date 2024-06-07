@@ -22,24 +22,24 @@ func square(number: Int) {
 square(number: 8)
 
 // Returning values
-func add(number: Int) -> Int {
-    return number + number
+func add(number1: Int, number2: Int) -> Int {
+    return number1 + number2
 }
 
-let results = add(number: 15)
+let results = add(number1: 10, number2: 14)
 print(results)
 
 // Parameter labels
-func sayHello(to name: String) {
+func sayHello(to name: String) { // to is an external param that maps to name.
     print("Hello, \(name)!")
 }
 sayHello(to: "Jason")
 
 // Ommiting parameter labels
-func greet(_ person: String) {
+func greet(_ person: String) { // _ allows to not specify the param name when calling the function.
     print("Hello \(person)!")
 }
-greet("Taylor")
+greet("Taylor") // no param specified and defaults to internal param. In this case thats person.
 
 // Default params
 func greet2(_ person: String, nicely: Bool = true) {
@@ -65,7 +65,7 @@ func square2(numbers: Int...) {
 square2(numbers: 1, 2, 3, 4, 5)
 
 // Writing throwing functions
-enum PasswordError: Error {
+enum PasswordError: Error { //this has to be an existing error type in swift.
     case obvious
 }
 
